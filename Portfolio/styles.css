@@ -49,10 +49,12 @@ body {
     background-color: rgba(29, 32, 25, .25);
     z-index: 2;
     width: 100%;
-    height: 1000vh;
+    height: 233vh;
 }
 
-
+#content-bg {
+    opacity: 1;
+}
 /* header {
     max-width: 50%;
     padding: 0px;
@@ -262,7 +264,7 @@ h1 {
     white-space: nowrap;
     opacity: 100%;
     transition: opacity 0.35s,  ease-in-out .45s;
-    z-index: 1;
+    z-index: 4;
 }
 
 .nav ul { 
@@ -321,25 +323,47 @@ h1 {
 
 .new-page {
     display: flex;
-    text-align: center;
     flex-direction: column;
-    justify-content: space-between;
-    position: absolute; /* Consider absolute positioning if it's inside a container */
+    justify-content: normal;
+    position: absolute; 
     background-color: rgba(0, 0, 0, .4);
-    z-index: 0;
+    z-index: 2;
+    text-align: left;
     
     border-radius: 20px;
     border: white solid 2px;
-    transition: opacity ease .1s, width ease .4s, height ease .4s;
+    transition: opacity ease .6s, width ease .4s, height ease .4s;
     transition-delay: .6s;
     white-space: wrap;
     margin-top: 132px;
+    padding: 1.5rem;
 }
 
 #aboutPage {
+    justify-content: normal;
     opacity: 0;
-    width: 0%;
-    height: 100rem;
+    width: 40%;
+    height: 50rem;
+    font-family: 'Copperplate-Light', 'Bona Nova SC' , serif;
+    font-size: 15px;
+    color: #f0f0f0;
+    font-weight: lighter;
+    
+}
+
+#aboutPage h1 {
+    justify-content: normal;
+    text-align: left;
+}
+
+#profilePhoto {
+    margin: 30px auto 30px;
+    height: 240px;
+    width: 240px;
+    border-radius: 120px;
+    transition: opacity ease .3s
+    transition-delay: .6s;
+    
     
 }
 

@@ -50,9 +50,10 @@ window.addEventListener('load', () =>
 
             body.style.overflow = 'hidden';
             
+            aboutPage.style.transition = 'opacity ease .2s, width ease .4s, height ease .4s'
             aboutPage.style.transitionDelay = '0s';
             aboutPage.style.opacity = '0';
-            aboutPage.style.width = '0%';
+            
             
             
         });
@@ -69,9 +70,10 @@ window.addEventListener('load', () =>
             nav.style.opacity = '0';
             nav.style.maxHeight = '0%';
             
+            aboutPage.style.transition = 'opacity ease .6s, width ease .4s, height ease .4s'
             aboutPage.style.transitionDelay = '.6s';
             aboutPage.style.opacity = '1';
-            aboutPage.style.width = '80%';
+            aboutPage.style.transition = 'opacity ease .6s, width ease .4s, height ease .4s'
             body.style.overflow = 'visible';
             
 
