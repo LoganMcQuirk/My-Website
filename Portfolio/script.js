@@ -3,16 +3,22 @@
 
 window.addEventListener('load', () =>
     {
+        
+             
+        document.body.attributeStyleMap.bottom = "0";
+
         document.body.classList.add('fade-in');
         t
         
-        
+    
 
         
     });   
     
     
     document.addEventListener('DOMContentLoaded', () => {
+
+        
         
         const body = document.body;
         const returnButton = document.getElementById('returnButton');
@@ -28,14 +34,18 @@ window.addEventListener('load', () =>
         const contentWrapper = document.querySelector('.content-wrapper');
         const hero = document.querySelector('.hero');
         const nav = document.querySelector('.nav');
+        const pageBorder = document.getElementById("pageOpenBorder");
     
         
         
         returnButton.addEventListener('click', () => {
 
-            
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth' // 'auto' for instant scroll
+            });
             body.animate({scrollTop:0}, .1);
-
+            
             titleElement.style.maxWidth = '130%';
 
             titleElement.style.opacity = '1';
@@ -50,19 +60,27 @@ window.addEventListener('load', () =>
 
             body.style.overflow = 'hidden';
             
-            aboutPage.style.transition = 'opacity ease .2s, width ease .4s, height ease .4s'
-            aboutPage.style.transitionDelay = '0s';
+            
             aboutPage.style.opacity = '0';
+            aboutPage.style.transition = 'opacity ease .2s 0s, width ease .4s, height ease .4s'
+            pageBorder.style.opacity = '0';
+            pageBorder.style.width = '0';
+            pageBorder.style.borderRadius = '2px';
+            pageBorder.style.transition = 'opacity .1s 0s, width ease .2s .6s, border-radius 0s .8s'
             
-            
+
             
         });
     
         aboutMeButton.addEventListener('click', () => {
+
+            
+
             titleElement.style.maxWidth = '0%';
             titleElement.style.opacity = '0';
             titleElement.style.height = '900px';
             hero.style.height = '40rem';
+            
             
             divideBottom.style.height = '0px';
             divideBottom.style.opacity = '0';
@@ -70,13 +88,18 @@ window.addEventListener('load', () =>
             nav.style.opacity = '0';
             nav.style.maxHeight = '0%';
             
-            aboutPage.style.transition = 'opacity ease .6s, width ease .4s, height ease .4s'
-            aboutPage.style.transitionDelay = '.6s';
-            aboutPage.style.opacity = '1';
-            aboutPage.style.transition = 'opacity ease .6s, width ease .4s, height ease .4s'
-            body.style.overflow = 'visible';
             
-
+            
+            aboutPage.style.opacity = '1';
+            aboutPage.style.transition = 'opacity ease .6s .8s, width ease .4s, height ease .4s'
+            body.style.overflow = 'auto';
+            pageBorder.style.opacity = '1';
+            pageBorder.style.width = '40%';
+            
+            pageBorder.style.borderRadius = '20px';
+            pageBorder.style.transition = 'opacity .1s .6s, width ease .2s .6s, border-radius .1s .8s'
+            
+            
         });
     
         portfolioButton.addEventListener('click', () => {
@@ -104,13 +127,9 @@ window.addEventListener('load', () =>
     
         });
     
-        
-    
-     
-    
-           
-    });
-
-    $(document).ready(function(){
-        
+        window.scrollTo({
+            top: 0,
+            behavior: 'smooth'
         });
+        body.animate({scrollTop:0}, .1);
+    });
