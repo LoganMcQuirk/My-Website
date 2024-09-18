@@ -1,5 +1,17 @@
 
 html {
+    
+    background-image: url(Images/sebastian-unrau-sp-p7uuT0tw-unsplash.jpg);
+    background-color: rgba(29, 32, 25, .25);
+    background-size: cover;
+    background-attachment: fixed;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    
+    width: 100%;
+    height: 100vh;
+    z-index: 1;
     box-sizing: border-box;
   }
   *, *:before, *:after {
@@ -7,21 +19,26 @@ html {
   }
   
 body {
-    background-attachment: fixed;
+    background-color: transparent;
     margin: 0;
     font-family: Arial, sans-serif;
-    height: 100%;
+    height: 100vh;
+    top: 0;
+    overflow: hidden;
+    
+    
 }
+
 
 #overlay {
     
-    position: fixed;
+    position: absolute;
     top:0;
     left:0;
     background-color: rgba(29, 32, 25, 1);
     z-index: -1;
     width: 100%;
-    height: 100%;
+    height: max-content;
     transition: opacity 1.1s
 }
 
@@ -32,18 +49,28 @@ body {
 
 #page-mask {
     background-color: rgba(29, 32, 25, .25);
-    z-index: 2;
+    z-index: 0;
+    opacity: 0;
     width: 100%;
-    height: 100%;
+    height: 100vh;
+    position: absolute;
 }
 
-
+#content-bg {
+    opacity: 1;
+}
 /* header {
     max-width: 50%;
     padding: 0px;
     margin: 0;
     
 } */
+
+main {
+    height: 100vh;
+    
+    
+}
 .content-wrapper {
     
     z-index: 3;
@@ -54,28 +81,17 @@ body {
     margin: auto;
     width: 80%;
     height: 100%;
-    padding: 3rem 3rem;
+    padding: 0 3rem 6rem 3rem;
     text-shadow: 0 0 5px rgba(0, 0, 0, .95);
     transition: height 0.8s;
     
     
 }
 
-/* #content-bg {
-    background-image: url(Images/Portfolio-image.png);
-    position: center;
-    background-position-y: bottom;
-    background-position-x: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-    max-height: 100%;
-    width: 100%;
-    
-    z-index: 5;
-    
-} */
+
 
 header {
+    
     display: -moz-flex;
     display: -ms-flex;
     display: flex;
@@ -92,6 +108,7 @@ header {
     text-align: center;
     z-index: 3;
     
+    
 }
 
 .header {
@@ -105,23 +122,22 @@ header {
 }
 
 
-
-#bg {
-    /* background-image: url(Images/bg-image-lake-ps.jpg); */
+/* #bg {
+   
 
     
     background-image: url(Images/sebastian-unrau-sp-p7uuT0tw-unsplash.jpg);
-    position: fixed;
     background-size: cover;
+    background-attachment: fixed;
     display: flex;
     flex-direction: column;
     justify-content: center;
-    background-position: center center;
+    
     width: 100%;
     height: 100vh;
-    z-index: -1;
-    
-}
+    z-index: 1;
+    position: sticky;
+} */
 
 h1 {
     display: flex;
@@ -134,7 +150,7 @@ h1 {
 
 .hero { 
     display: flex;
-    justify-content: center;
+    justify-content: flex-start;
     align-content: center;
     align-items: center;
     text-align: center;
@@ -152,15 +168,18 @@ h1 {
 
 
 .title {
+    display: flex;
+    flex-direction: column;
     z-index: 4;
     border: #f0f0f0 solid 2px;
     padding: 1em 0em;
     border-left: 0;
     border-right: 0;
     max-width: 130%;
-    height: 190%;
     opacity: 100%;
     transition: max-width 0.25s, opacity 0.25s ease-in-out .15s;
+    white-space: nowrap;
+    height: fit-content;
     
 }
 
@@ -187,15 +206,11 @@ h1 {
     font-size: 20px;
     color: #f0f0f0;
     font-weight: lighter;
-    white-space: nowrap;
+    
+    
 }
 
-/* .logo-img {
-    display: flex;
-    text-align: center;
-    border: 2px solid red;
-    border-radius: .3em;
-} */
+
 
 .logo-img img {
     display: flex;
@@ -226,15 +241,20 @@ h1 {
 
 
 .divide-top {
+    display: flex;
+    flex-direction: column;
     width: 2px;
-    height: 600px;
+    height: 60px;
     background-color: white;
     transition: height .3s, ease-in-out .5s;
     z-index: 3;
-    
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .divide-bottom {
+    display: flex;
+    flex-direction: column;
     width: 2px;
     height: 400px;
     background-color: #f0f0f0;
@@ -249,7 +269,7 @@ h1 {
     white-space: nowrap;
     opacity: 100%;
     transition: opacity 0.35s,  ease-in-out .45s;
-    z-index: 1;
+    z-index: 4;
 }
 
 .nav ul { 
@@ -306,67 +326,75 @@ h1 {
 
 }
 
-
-/* Projects Section */
-
-.projects {
-    display: flex;
-    flex-direction: row;
-    max-width: 100%;
-    justify-content: space-evenly;
-    overflow-x: 0;
-}
-
-.projects img {
-    
-    max-width: 22rem;
-    
-}
-
-
-.card {
-    display: flex;
-    flex-direction: column;
-    background-color:#f0f0f0;
-    max-width: min-content;
-    margin: 1em;
-    border-color:#333;
-    border: 1em;
-    border-radius: .5em;
-}
-.card-content {
-    padding: 0 1em 1em 1em;
-}
-.card-content img { 
-    text-align: center;
-    max-width: 100px;
-    max-height: 100px;
-}
-
-
 .new-page {
     display: flex;
-    text-align: center;
     flex-direction: column;
-    justify-content: space-between;
-    position: absolute;
-    background-color: rgba(0, 0, 0, .4);
-    z-index: 0;
-    width: 0%;
-    height: fit-content;
-    /* margin-top: 27.3rem; */
+    justify-content: normal;
+    position: absolute; 
+    background-color: rgba(4, 4, 4, 0.5);
+    z-index: 2;
+    text-align: left;
+    
     border-radius: 20px;
     border: white solid 2px;
-
-    transition: opacity ease .1s, width ease .4s;
-    transition-delay: .6s;
-
-    transform: translateY(0);
     
+    transition: opacity ease .6s .8s, width ease .4s.2s , height ease .4s .6s;
+    white-space: wrap;
+    margin-top: 132px;
+    
+    padding: 1.5rem;
+}
+#pageOpenBorder {
+    width: 0;
+    height: 0;
+    margin-top: 132px;
+    background: 0;
+    border: 0;
+    border-radius: 0px;
+    border-top: white solid 2px;
+    justify-content: normal;
+    opacity: 0;
+    z-index: 0;
+    transition: opacity .1s .6s, width ease .5s .6s ;
+}
+#aboutPage {
+    justify-content: normal;
+    opacity: 0;
+    width: 40%;
+    height: 89rem;
+    font-family: 'Copperplate-Light', 'Bona Nova SC' , serif;
+    font-size: 15px;
+    color: #f0f0f0;
+    font-weight: lighter;
+    margin-bottom: 30px;
+}
+ #pageMargin {
+    height: 60rem;
+    margin-top: 132px;
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    justify-content: normal;
+    background: 0;
+    border: 0;
+ }
+
+#aboutPage h1 {
+    justify-content: normal;
+    width: max-content;
+    text-align: left;
+    border-bottom: white solid 1px;
 }
 
-#aboutPage {
-    opacity: 0;
+#profilePhoto {
+    margin: 30px auto 30px;
+    height: 240px;
+    width: 240px;
+    border-radius: 120px;
+    
+    
+    
+    
     
 }
 
