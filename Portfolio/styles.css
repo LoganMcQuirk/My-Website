@@ -167,21 +167,7 @@ h1 {
 
 
 
-.title {
-    display: flex;
-    flex-direction: column;
-    z-index: 4;
-    border: #f0f0f0 solid 2px;
-    padding: 1em 0em;
-    border-left: 0;
-    border-right: 0;
-    max-width: 130%;
-    opacity: 100%;
-    transition: max-width 0.25s, opacity 0.25s ease-in-out .15s;
-    white-space: nowrap;
-    height: fit-content;
-    
-}
+
 
 .hero h1 {
     
@@ -210,7 +196,21 @@ h1 {
     
 }
 
-
+.title {
+    display: flex;
+    flex-direction: column;
+    z-index: 4;
+    border: #f0f0f0 solid 2px;
+    padding: 1em 0em;
+    border-left: 0;
+    border-right: 0;
+    max-width: 130%;
+    opacity: 100%;
+    transition: max-width 0.25s, opacity 0.25s ease-in-out .15s;
+    white-space: nowrap;
+    height: fit-content;
+    
+}
 
 .logo-img img {
     display: flex;
@@ -263,6 +263,7 @@ h1 {
     
 }
 
+/* Navigation Styles -----------------------------------------------------------------------*/
 
 .nav {
     width: 100%;
@@ -326,6 +327,8 @@ h1 {
 
 }
 
+/* On-click Styles -----------------------------------------------------------------------*/
+
 .new-page {
     display: flex;
     flex-direction: column;
@@ -357,27 +360,37 @@ h1 {
     z-index: 0;
     transition: opacity .1s .6s, width ease .5s .6s ;
 }
-#aboutPage {
-    justify-content: normal;
-    opacity: 0;
-    width: 40%;
-    height: 89rem;
-    font-family: 'Copperplate-Light', 'Bona Nova SC' , serif;
-    font-size: 15px;
-    color: #f0f0f0;
-    font-weight: lighter;
-    margin-bottom: 30px;
-}
- #pageMargin {
-    height: 60rem;
-    margin-top: 132px;
+
+#pageMargin {
+    height: 0;
+    margin-top: 182px;
+    margin-bottom: 122px;
     position: absolute;
     display: flex;
     flex-direction: column;
     justify-content: normal;
     background: 0;
     border: 0;
+    transition: none;
+    
  }
+
+/* About Page Styles -----------------------------------------------------------------------*/
+
+
+#aboutPage {
+    justify-content: normal;
+    opacity: 0;
+    width: 40%;
+    height: fit-content;
+    font-family: 'Copperplate-Light', 'Bona Nova SC' , serif;
+    font-size: 15px;
+    color: #f0f0f0;
+    font-weight: lighter;
+    margin-bottom: 30px;
+    
+}
+
 
 #aboutPage h1 {
     justify-content: normal;
@@ -392,16 +405,19 @@ h1 {
     width: 240px;
     border-radius: 120px;
     
-    
-    
-    
+
     
 }
+
+/* Porfolio Styles -----------------------------------------------------------------------*/
+
 
 #portfolioPage {
     opacity: 0;
     
 }
+
+/* Contact Styles -----------------------------------------------------------------------*/
 
 #contactPage {
     opacity: 0;

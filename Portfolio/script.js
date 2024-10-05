@@ -35,7 +35,8 @@ window.addEventListener('load', () =>
         const hero = document.querySelector('.hero');
         const nav = document.querySelector('.nav');
         const pageBorder = document.getElementById("pageOpenBorder");
-    
+        
+        
         
         
         returnButton.addEventListener('click', () => {
@@ -68,13 +69,11 @@ window.addEventListener('load', () =>
             pageBorder.style.borderRadius = '2px';
             pageBorder.style.transition = 'opacity .1s 0s, width ease .2s .6s, border-radius 0s .8s'
             
-
+        
             
         });
     
         aboutMeButton.addEventListener('click', () => {
-
-            
 
             titleElement.style.maxWidth = '0%';
             titleElement.style.opacity = '0';
@@ -99,6 +98,7 @@ window.addEventListener('load', () =>
             pageBorder.style.borderRadius = '20px';
             pageBorder.style.transition = 'opacity .1s .6s, width ease .2s .6s, border-radius .1s .8s'
             
+            adjustPageMarginAbout(); // Add a margin below page
             
         });
     
@@ -112,7 +112,7 @@ window.addEventListener('load', () =>
             divideTop.style.height = '70px';
             nav.style.opacity = '0';
     
-            
+            adjustPageMarginPortfolio();
         });
     
         contactButton.addEventListener('click', () => {
@@ -124,6 +124,8 @@ window.addEventListener('load', () =>
             divideBottom.style.opacity = '0';
             divideTop.style.height = '70px';
             nav.style.opacity = '0';
+
+            adjustPageMarginPortfolio();
     
         });
     
@@ -133,3 +135,18 @@ window.addEventListener('load', () =>
         });
         body.animate({scrollTop:0}, .1);
     });
+
+    window.addEventListener('resize', adjustPageMargin);
+
+    function adjustPageMarginAbout() {
+        const aboutPageHeight = aboutPage.offsetHeight; // Get height of the aboutPage
+        pageMargin.style.height = aboutPageHeight + 'px'; // Match the height of pageMargin
+    }
+    function adjustPageMarginPortfolio() {
+        const portfolioPageHeight = portfolioPage.offsetHeight; 
+        pageMargin.style.height = portfolioPageHeight + 'px'; 
+    }
+    function adjustPageMarginPortfolio() {
+        const contactPageHeight = contactPage.offsetHeight; 
+        pageMargin.style.height = contactPageHeight + 'px'; 
+    }
