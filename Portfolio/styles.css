@@ -25,9 +25,7 @@ body {
     height: 100vh;
     top: 0;
     overflow: hidden;
-    
-    
-}
+    }
 
 
 #overlay {
@@ -405,10 +403,11 @@ h1 {
     width: 240px;
     border-radius: 120px;
     
-
-    
 }
 
+#aboutPage p {
+    padding: 1rem;
+}
 /* Porfolio Styles -----------------------------------------------------------------------*/
 
 
